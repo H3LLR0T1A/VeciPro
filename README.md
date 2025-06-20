@@ -1,4 +1,5 @@
 # 🛠️ VeciPro – Vecino Profesional
+![Logo VeciPro (2)](https://github.com/user-attachments/assets/59e08084-97c3-4181-9f52-01ec5e6a61ab)
 
 **VeciPro** es una aplicación móvil diseñada para conectar a vecinos con técnicos verificados dentro de su misma comunidad. Esta solución busca facilitar el acceso a servicios técnicos confiables, accesibles y organizados, promoviendo el empleo local y la confianza vecinal mediante el uso de tecnología intuitiva.
 
@@ -41,6 +42,8 @@ VeciPro contribuye activamente a los siguientes ODS de la ONU:
 - **Jamal Rengifo** – Lógica funcional y desarrollo de la aplicación.
 - **Institución:** U.E.P. Simón Bolívar – Fe y Alegría  
 - **Tutor del proyecto:** Equipo **OverCrack** – Mentoría técnica y acompañamiento estratégico.
+
+![Sobre Nosotros – Equipo VeciPro Somos Kendry López y Jamal Rengifo, estudiantes de la Unidad Educativa Privada Simón Bolívar – Fe y Alegría, y creadores de VeciPro, una solución digital pensada de](https://github.com/user-attachments/assets/e8ed4c9d-7825-44ae-ab89-c9d18b9198ad)
 
 ---
 
