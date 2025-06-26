@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeciPro - Chats</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --color-primario: #1E3A8A;
+            --color-secundario: #10B981;
+            --color-neutro-oscuro: #374151;
+            --color-neutro-claro: #F3F4F6;
+            --color-blanco: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--color-neutro-claro);
+            margin: 0;
+        }
+
+        .mobile-container {
+            max-width: 414px;
+            margin: 0 auto;
+            background: var(--color-blanco);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: var(--color-primario);
+            padding: 50px 20px 20px;
+            color: var(--color-blanco);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: var(--color-blanco);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .chat-list {
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+
+        .chat-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #E5E7EB;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .chat-item:hover {
+            background: var(--color-neutro-claro);
+        }
+
+        .chat-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-secundario), var(--color-primario));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-blanco);
+            font-weight: 600;
+            margin-right: 15px;
+        }
+
+        .chat-info {
+            flex: 1;
+        }
+
+        .chat-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .chat-last-message {
+            color: #6B7280;
+            font-size: 14px;
+        }
+
+        .chat-time {
+            color: #6B7280;
+            font-size: 12px;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 414px;
+            width: 100%;
+            background: var(--color-blanco);
+            border-top: 1px solid #E5E7EB;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0 25px;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: #6B7280;
+            text-decoration: none;
+        }
+
+        .nav-item.active {
+            color: var(--color-primario);
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <div class="header">
+            <button class="back-btn" onclick="window.location.href='index.html'">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1 class="header-title">Conversaciones</h1>
+        </div>
+
+        <div class="chat-list" id="chatList">
+            <!-- Las conversaciones se cargan dinámicamente -->
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="index.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Inicio</span>
+            </a>
+            <a href="buscar.html" class="nav-item">
+                <i class="fas fa-search"></i>
+                <span>Buscar</span>
+            </a>
+            <a href="chat-list.html" class="nav-item active">
+                <i class="fas fa-comments"></i>
+                <span>Chat</span>
+            </a>
+            <a href="historial.html" class="nav-item">
+                <i class="fas fa-history"></i>
+                <span>Historial</span>
+            </a>
+            <a href="perfil.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Perfil</span>
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        // Verificar autenticación
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = localStorage.getItem('vecipro-user');
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+            loadChats();
+        });
+
+        function loadChats() {
+            const chatList = document.getElementById('chatList');
+            
+            // Conversaciones de ejemplo
+            const chats = [
+                {
+                    id: 1,
+                    name: 'Carlos Mendoza',
+                    lastMessage: 'Estaré allí en 30 minutos',
+                    time: '14:32',
+                    avatar: 'CM'
+                },
+                {
+                    id: 2,
+                    name: 'Ana García',
+                    lastMessage: 'El servicio de limpieza quedó perfecto',
+                    time: '12:15',
+                    avatar: 'AG'
+                },
+                {
+                    id: 3,
+                    name: 'Luis Rodriguez',
+                    lastMessage: 'Necesito ver las fotos del problema eléctrico',
+                    time: 'Ayer',
+                    avatar: 'LR'
+                }
+            ];
+
+            chatList.innerHTML = '';
+            
+            if (chats.length === 0) {
+                chatList.innerHTML = `
+                    <div style="text-align: center; padding: 50px 20px; color: #6B7280;">
+                        <i class="fas fa-comments" style="font-size: 48px; margin-bottom: 20px; opacity: 0.5;"></i>
+                        <h3>No hay conversaciones</h3>
+                        <p>Cuando solicites un servicio, aparecerán tus chats aquí</p>
+                    </div>
+                `;
+                return;
+            }
+
+            chats.forEach(chat => {
+                const chatItem = document.createElement('div');
+                chatItem.className = 'chat-item';
+                chatItem.innerHTML = `
+                    <div class="chat-avatar">${chat.avatar}</div>
+                    <div class="chat-info">
+                        <div class="chat-name">${chat.name}</div>
+                        <div class="chat-last-message">${chat.lastMessage}</div>
+                    </div>
+                    <div class="chat-time">${chat.time}</div>
+                `;
+                
+                chatItem.addEventListener('click', () => {
+                    openChat(chat.id);
+                });
+                
+                chatList.appendChild(chatItem);
+            });
+        }
+
+        function openChat(chatId) {
+            // Simular apertura de chat individual
+            alert(`Abriendo chat ${chatId} - Funcionalidad en desarrollo`);
+        }
+    </script>
+</body>
+</html> 
