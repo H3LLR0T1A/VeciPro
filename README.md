@@ -30,20 +30,20 @@ VeciPro contribuye activamente a los siguientes ODS de la ONU:
 
 ## ⚙️ Tecnologías Utilizadas
 
-- **FlutterFlow** – Desarrollo visual frontend.
-- **Firebase** – Backend completo: autenticación, Firestore, Cloud Storage y funciones.
-- **Figma / Canva** – Diseño de interfaz y branding.
+- **HTML, CSS y JavaScript** – Desarrollo personalizado del frontend de la aplicación.
+- **Cursor** – Plataforma utilizada para gestionar el backend: autenticación, base de datos (Firestore), almacenamiento en la nube y funciones automatizadas.
+- **Canva** – Herramienta usada para el diseño gráfico y la identidad visual del proyecto.
 
 ---
 
-## 👥 Equipo Desarrollador
+## 👨‍💻 Desarrollador del Proyecto
 
-- **Kendry López** – Diseño visual y estrategia de comunicación.
-- **Jamal Rengifo** – Lógica funcional y desarrollo de la aplicación.
+- **Jamal Rengifo** – Responsable de la lógica funcional y el desarrollo completo de la aplicación **VeciPro**.
 - **Institución:** U.E.P. Simón Bolívar – Fe y Alegría  
 - **Tutor del proyecto:** Equipo **OverCrack** – Mentoría técnica y acompañamiento estratégico.
 
-![Sobre Nosotros – Equipo VeciPro Somos Kendry López y Jamal Rengifo, estudiantes de la Unidad Educativa Privada Simón Bolívar – Fe y Alegría, y creadores de VeciPro, una solución digital pensada de](https://github.com/user-attachments/assets/e8ed4c9d-7825-44ae-ab89-c9d18b9198ad)
+![Sobre Nosotros – Equipo VeciPro Somos Kendry López y Jamal Rengifo, estudiantes de la Unidad Educativa Privada Simón Bolívar – Fe y Alegría, y creadores de VeciPro, una solución digital pensada de](https://github.com/user-attachments/assets/56914825-2fa8-41fb-b3cf-250037211975)
+
 
 ---
 
